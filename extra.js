@@ -39,7 +39,7 @@ boot();
 
 /* ================= LIVE CLOCK ================= */
 (function(){var c=$('#clock');if(!c)return;var f;try{f=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Dhaka'})}catch(e){return}
-  function t(){c.textContent='Chattogram, Bangladesh · '+f.format(new Date())+' BST'}t();setInterval(t,20000)})();
+  function t(){c.textContent='Hathazari, Chattogram · '+f.format(new Date())+' BST'}t();setInterval(t,20000)})();
 
 /* ================= HERO PCB TRACES WITH CURRENT PULSES ================= */
 (function(){
@@ -105,10 +105,15 @@ boot();
    ['Faith is the bird that feels the light and sings when the dawn is still dark.','Rabindranath Tagore','Stray Birds · 1916'],
    ['The important thing is not to stop questioning. Curiosity has its own reason for existing.','Albert Einstein','LIFE magazine interview · 1955'],
    ['We are a way for the cosmos to know itself.','Carl Sagan','Cosmos · 1980'],
-   ['It is not that we have a short time to live, but that we waste a lot of it.','Seneca','On the Shortness of Life · Rome, c. 49 CE']
+   ['It is not that we have a short time to live, but that we waste a lot of it.','Seneca','On the Shortness of Life · Rome, c. 49 CE'],
+   ['Indeed, with hardship comes ease.','The Qur\u2019an','Surah Ash-Sharh 94:5\u20136'],
+   ['We must have perseverance and above all confidence in ourselves. We must believe that we are gifted for something, and that this thing must be attained.','Marie Curie','As recalled in Madame Curie by Eve Curie \u00b7 1937'],
+   ['\u09ac\u09b2 \u09ac\u09c0\u09b0 \u2014 \u09ac\u09b2 \u0989\u09a8\u09cd\u09a8\u09a4 \u09ae\u09ae \u09b6\u09bf\u09b0!','Kazi Nazrul Islam','\u201cSay, hero, say: my head is held high!\u201d \u00b7 Bidrohi (The Rebel), 1922','bn'],
+   ['Genius is one percent inspiration and ninety-nine percent perspiration.','Thomas Edison','Harper\u2019s Monthly \u00b7 1932'],
+   ['Dream, dream, dream. Dreams transform into thoughts, and thoughts result in action.','A. P. J. Abdul Kalam','Indian scientist and President \u00b7 from his speeches']
   ],dots=$('#qdots'),bar=$('#qbar'),els=[],ds=[],cur=0,timer=null,DUR=9000,t0=0,raf=0,vis=false;
   Q.forEach(function(q,i){
-    var d=document.createElement('div');d.className='q';
+    var d=document.createElement('div');d.className='q'+(q[3]==='bn'?' bn':'');if(q[3]==='bn')d.setAttribute('lang','bn');
     var p=document.createElement('p');q[0].split(' ').forEach(function(w,k){var s=document.createElement('span');s.className='w';s.style.setProperty('--i',k);s.textContent=w;p.appendChild(s);p.appendChild(document.createTextNode(' '))});
     var c=document.createElement('cite');c.innerHTML='— '+q[1]+'<span>'+q[2]+'</span>';d.appendChild(p);d.appendChild(c);stage.appendChild(d);els.push(d);
     var dot=document.createElement('i');dot.addEventListener('click',function(){go(i,true)});dots.appendChild(dot);ds.push(dot)});

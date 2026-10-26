@@ -386,3 +386,6 @@ details li{margin:4px 0}
   .legacy{padding:24px 20px 22px 24px}
 }
 @media (prefers-reduced-motion:reduce){.reader.open{animation-duration:.01ms!important}.q.on p .w,.ch.in .ch-n{animation:none}.q p .w,.js .h-in{opacity:1;transform:none;filter:none}.tl-card{opacity:1;transform:none}}
+
+.q.bn p{font-style:normal;font-family:'Hind Siliguri','Noto Sans Bengali',sans-serif;font-weight:500}
+.q p{font-family:'Newsreader','Hind Siliguri',Georgia,serif}
