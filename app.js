@@ -38,7 +38,7 @@ if(reduce){te.textContent=roles[0]}else{(function tick(){var w=roles[ri];ci+=del
 
 /* ---------- POINTER GLOW + TILT (desktop only) ---------- */
 if(!coarse){
-  var glow=$('#glow');addEventListener('pointermove',function(e){glow.style.transform='translate3d('+(e.clientX-210)+'px,'+(e.clientY-210)+'px,0)'},{passive:true});
+  var glow=$('#glow');addEventListener('pointermove',function(e){glow.style.transform='translate3d('+(e.clientX-210)+'px,'+(e.clientY-210)+'px,0)';ptr.x=e.clientX;ptr.on=1},{passive:true});
   $$('[data-tilt]').forEach(function(el){
     el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
       el.style.transform='perspective(900px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg)';el.style.transition='transform .08s'});
@@ -81,6 +81,7 @@ function size(){dpr=Math.min(window.devicePixelRatio||1,lowEnd?1:1.5);W=innerWid
 size();addEventListener('resize',size);
 document.addEventListener('visibilitychange',function(){vis=!document.hidden;if(vis)requestAnimationFrame(frame)});
 var cols=['61,232,255','139,123,255','255,179,71'];
+var ptr=window.__ptr={x:-999,on:0};
 function waves(t){
   var step=coarse?12:6,par=sy*.12;
   for(var k=0;k<3;k++){
@@ -90,6 +91,7 @@ function waves(t){
       for(var x=0;x<=W+step;x+=step){
         var u=x/W*TAU*(layer?1.6:1.1)+t*.0004*(layer?-1.3:1)+ph;
         var y=base+Math.sin(u)*(layer?38:70)+Math.sin(u*3)*(layer?6:12)/3;
+        if(!layer&&ptr.on>.01){var dq=x-ptr.x;y-=46*ptr.on*Math.exp(-dq*dq/26000)}
         x===0?bx.moveTo(x,y):bx.lineTo(x,y)}
       bx.strokeStyle='rgba('+cols[k]+','+(layer?.07:.15)+')';bx.lineWidth=layer?1:1.6;bx.stroke();
     }
@@ -107,7 +109,7 @@ function symbols(t){
 function frame(t){
   if(!vis)return;requestAnimationFrame(frame);
   if(t-last<(coarse?33:16))return;last=t;
-  bx.clearRect(0,0,W,H);waves(t);symbols(t)}
+  ptr.on*=.985;bx.clearRect(0,0,W,H);waves(t);symbols(t)}
 if(reduce){waves(2000);symbols(0)}else requestAnimationFrame(frame);
 
 /* ---------- HERO: Fourier epicycles drawing a square wave ---------- */

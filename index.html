@@ -13,8 +13,9 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070f'/%3E%3Cpath d='M6 32 Q16 6 26 32 T46 32 T58 32' fill='none' stroke='%233de8ff' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},6000)</script>
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
@@ -27,6 +28,7 @@
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav id="menu">
     <a href="#about">About</a>
+    <a href="#story">My Story</a>
     <a href="#projects">Projects</a>
     <a href="#interests">Curiosity</a>
     <a href="#achievements">Achievements</a>
@@ -37,29 +39,31 @@
 
 <main id="top">
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
+  <canvas id="pcb" aria-hidden="true"></canvas>
   <div class="hero-text">
-    <p class="eyebrow mono"><span class="dot"></span> Electrical &amp; Electronic Engineering · CUET</p>
-    <h1><span class="hello">Hello, I am</span><span class="name">Abdullah Mukter Jewel</span></h1>
-    <p class="typed-line"><span id="typed" class="mono"></span><span class="caret">|</span></p>
-    <p class="lead">I enjoy turning ideas into working circuits and useful software. From a home-planning web tool to ESP-32 sensor projects, I like building things that can be measured, tested and improved, and I stay curious about physics, space and history along the way.</p>
-    <div class="btns">
+    <p class="eyebrow mono h-in" style="--d:.05s"><span class="dot"></span> Electrical &amp; Electronic Engineering · CUET</p>
+    <h1 class="h-in" style="--d:.15s"><span class="hello">Hello, I am</span><span class="name" id="name">Abdullah Mukter Jewel</span></h1>
+    <p class="typed-line h-in" style="--d:.3s"><span id="typed" class="mono"></span><span class="caret">|</span></p>
+    <p class="lead h-in" style="--d:.4s">I enjoy turning ideas into working circuits and useful software. From a home-planning web tool to ESP-32 sensor projects, I like building things that can be measured, tested and improved, and I stay curious about physics, space and history along the way.</p>
+    <div class="btns h-in" style="--d:.5s">
       <a class="btn primary" href="#projects">View my projects</a>
+      <a class="btn story-btn" href="#story">Read my story</a>
       <a class="btn ghost" href="#contact">Get in touch</a>
     </div>
-    <ul class="hero-meta mono">
-      <li>Chattogram, Bangladesh</li>
+    <ul class="hero-meta mono h-in" style="--d:.6s">
+      <li id="clock">Chattogram, Bangladesh</li>
       <li>Open to internships &amp; collaboration</li>
     </ul>
   </div>
   <div class="hero-visual">
-    <div class="portrait" data-tilt>
+    <div class="portrait h-in" data-tilt style="--d:.25s">
       <span class="ring"></span>
       <img src="img/portrait.webp" width="720" height="720" alt="Portrait of Abdullah Mukter Jewel" fetchpriority="high">
       <span class="tag t1 mono">V(t) = V<sub>m</sub> sin(ωt + φ)</span>
       <span class="tag t2 mono">EEE · CUET</span>
     </div>
-    <div class="scope" aria-label="Animated Fourier series drawing a square wave">
+    <div class="scope h-in" style="--d:.55s" aria-label="Animated Fourier series drawing a square wave">
       <div class="scope-head mono"><span>FOURIER · SQUARE WAVE</span><span id="harm">n = 5</span></div>
       <canvas id="epi"></canvas>
       <div class="scope-foot mono">f(t) = (4/π) Σ sin((2k−1)t) / (2k−1)</div>
@@ -84,7 +88,7 @@
       <div class="edu">
         <h3 class="mono">EDUCATION</h3>
         <div class="edu-item"><b>B.Sc. in Electrical &amp; Electronic Engineering</b><span>Chittagong University of Engineering and Technology (CUET)</span><em class="mono">Ongoing</em></div>
-        <div class="edu-item"><b>Higher Secondary Certificate, Science</b><span>Hathazari College, Chattogram</span><em class="mono">2022</em></div>
+        <div class="edu-item"><b>HSC, Science — Golden A+</b><span>Hathazari College, Chattogram · 1206 / 1300, highest in college</span><em class="mono">2022</em></div>
       </div>
       <div class="stats">
         <div><b data-count="4">0</b><span>ESP-32 projects</span></div>
@@ -96,9 +100,39 @@
   </div>
 </section>
 
+<!-- STORY -->
+<section id="story" class="sec story">
+  <div class="sec-head reveal"><span class="idx mono">02</span><h2>My story</h2></div>
+  <div class="story-top">
+    <blockquote class="legacy reveal">
+      <p>My father did not get the success he worked so hard for, yet his greatest success is me. <span>I am the next chapter of his legacy.</span></p>
+      <footer class="mono">— on growing up beside a village tea shop</footer>
+    </blockquote>
+    <div class="story-intro reveal">
+      <p>I grew up in a village near Chattogram, helping in my father's tea shop. My father was an educated man and a gifted mathematician who raised us through tuition and hard work; my mother kept our home with strong values. Their sacrifice is the reason I study today.</p>
+      <p class="rs">In a circuit, resistance never stops the current. It only asks for more voltage. This is the story of how I kept finding mine.</p>
+      <button class="btn primary read-btn" id="openReader" type="button">Read my full story <span aria-hidden="true">→</span></button>
+      <span class="mono lang-note">English · বাংলা</span>
+    </div>
+  </div>
+
+  <div class="tl" id="tl">
+    <div class="tl-line"><i class="tl-fill" id="tlFill"></i><b class="tl-spark" id="tlSpark"></b></div>
+
+    <article class="tl-node"><span class="tl-t mono">t₀</span><div class="tl-card"><h3>Roots</h3><p>Born into a tea-shop family. Father: self-made, a mathematics tutor. Mother: a homemaker of firm principles.</p></div></article>
+    <article class="tl-node"><span class="tl-t mono">t₁</span><div class="tl-card"><h3>Madrasa years</h3><p>Nursery to class 3 at a Noorani madrasa, finishing in <b>2nd place</b>.</p></div></article>
+    <article class="tl-node"><span class="tl-t mono">t₂</span><div class="tl-card"><h3>Primary school</h3><p>Joined class 4 at roll 41 of 45, then stood <b>1st in every exam</b>. PSC <b>A+</b>, the only one in the school, plus <b>3 of 3</b> scholarships passed.</p></div></article>
+    <article class="tl-node"><span class="tl-t mono">t₃</span><div class="tl-card"><h3>High school</h3><p>2nd among 126 in admission, then <b>1st from class 6 to 10</b>. JSC GPA <b>4.93</b>. SSC GPA 4.72, a result that hurt, because I had hoped for A+.</p></div></article>
+    <article class="tl-node storm"><span class="tl-t mono">R↑</span><div class="tl-card"><h3>The storm</h3><p>During SSC my mother was diagnosed with stage-4 lymphoma. The tea shop could not cover her treatment and our family was shaken financially.</p></div></article>
+    <article class="tl-node"><span class="tl-t mono">t₄</span><div class="tl-card"><h3>Hathazari College</h3><p>Among 121 A+ students I felt small, yet finished <b>3rd</b> in first year and <b>1st</b> in second year. <b>Shanta Apu</b> taught me Chemistry and Biology <b>free for two years</b>. I will always be grateful.</p></div></article>
+    <article class="tl-node"><span class="tl-t mono">t₅</span><div class="tl-card"><h3>HSC 2022</h3><p><b>1206 / 1300</b>, the highest in college, Golden A+. Cracked <b>CUET, Dhaka University and SUST</b> and was shortlisted for the BUET written round.</p></div></article>
+    <article class="tl-node last"><span class="tl-t mono">t₆</span><div class="tl-card"><h3>CUET · EEE</h3><p>October 2023: began Electrical and Electronic Engineering, and since then I support my family through tutoring. Alhamdulillah, the journey continues.</p></div></article>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="projects" class="sec">
-  <div class="sec-head reveal"><span class="idx mono">02</span><h2>Projects</h2></div>
+  <div class="sec-head reveal"><span class="idx mono">03</span><h2>Projects</h2></div>
 
   <article class="featured reveal">
     <div class="featured-copy">
@@ -217,7 +251,7 @@
 
 <!-- INTERESTS -->
 <section id="interests" class="sec">
-  <div class="sec-head reveal"><span class="idx mono">03</span><h2>What keeps me curious</h2></div>
+  <div class="sec-head reveal"><span class="idx mono">04</span><h2>What keeps me curious</h2></div>
   <p class="sec-intro reveal">Engineering teaches me how to build. These subjects remind me to keep asking why.</p>
   <div class="int-grid">
     <article class="int reveal" data-tilt>
@@ -276,9 +310,21 @@
   </div>
 </section>
 
+<!-- VOICES -->
+<section id="voices" class="sec">
+  <div class="sec-head reveal"><span class="idx mono">05</span><h2>Voices from the past</h2></div>
+  <p class="sec-intro reveal">History and philosophy keep me steady. These are a few lines I return to.</p>
+  <div class="qwrap reveal" id="qwrap">
+    <span class="qmark" aria-hidden="true">“</span>
+    <div class="qstage" id="qstage" aria-live="polite"></div>
+    <div class="qnav"><button id="qprev" aria-label="Previous quote">‹</button><div class="qdots" id="qdots"></div><button id="qnext" aria-label="Next quote">›</button></div>
+    <div class="qbar"><i id="qbar"></i></div>
+  </div>
+</section>
+
 <!-- ACHIEVEMENTS -->
 <section id="achievements" class="sec">
-  <div class="sec-head reveal"><span class="idx mono">04</span><h2>Achievements</h2></div>
+  <div class="sec-head reveal"><span class="idx mono">06</span><h2>Achievements</h2></div>
   <div class="timeline">
     <article class="ach reveal">
       <div class="ach-year mono">2026</div>
@@ -294,8 +340,8 @@
     <article class="ach reveal">
       <div class="ach-year mono">2022</div>
       <div class="ach-body">
-        <h3>Higher Secondary Completion Award</h3>
-        <p>Received the Government of Bangladesh Higher Secondary Completion Award (HSCA) 2022 in the Science group, under the Chattogram Board, as a student of Hathazari College.</p>
+        <h3>Golden A+ in HSC and the Completion Award</h3>
+        <p>Finished HSC 2022 with Golden A+ and <b>1206 out of 1300, the highest marks in Hathazari College</b>. Received the Government of Bangladesh Higher Secondary Completion Award (HSCA) 2022 in the Science group, Chattogram Board.</p>
         <div class="pair single">
           <button class="zoom" data-full="img/crystal.webp" data-cap="Higher Secondary Completion Award crystal, 2022"><img src="img/crystal.webp" loading="lazy" alt="Crystal award for the Higher Secondary Completion Award 2022"></button>
         </div>
@@ -316,7 +362,7 @@
 
 <!-- GALLERY -->
 <section id="gallery" class="sec">
-  <div class="sec-head reveal"><span class="idx mono">05</span><h2>Through my lens</h2></div>
+  <div class="sec-head reveal"><span class="idx mono">07</span><h2>Through my lens</h2></div>
   <p class="sec-intro reveal">Photography is my quiet way of noticing small things: a droplet, a rainbow, a ring of light around the sun. Tap a photo to enlarge it.</p>
   <div class="gal">
     <button class="g a reveal" data-full="img/nat-a-drop-of-world.webp" data-cap="A Drop of World"><img src="img/nat-a-drop-of-world.webp" loading="lazy" alt="A water droplet hanging from a green leaf"><span>A Drop of World</span></button>
@@ -329,7 +375,7 @@
 
 <!-- CONTACT -->
 <section id="contact" class="sec contact">
-  <div class="sec-head reveal"><span class="idx mono">06</span><h2>Let us connect</h2></div>
+  <div class="sec-head reveal"><span class="idx mono">08</span><h2>Let us connect</h2></div>
   <div class="contact-card reveal">
     <div>
       <p class="big">I would be glad to hear from you, whether it is about an internship, a project, feedback on PlanCraft 3D, or simply a conversation about science.</p>
@@ -350,6 +396,61 @@
   <a href="#top">Back to top ↑</a>
 </footer>
 
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-label="My full story" hidden data-lang="en">
+  <div class="rd-bar"><i id="rdProg"></i></div>
+  <div class="rd-head">
+    <span class="mono rd-title">MY STORY</span>
+    <div class="lang-sw" role="group" aria-label="Language"><button type="button" data-l="en" class="on">English</button><button type="button" data-l="bn">বাংলা</button></div>
+    <button class="rd-x" id="rdClose" type="button" aria-label="Close story">×</button>
+  </div>
+  <div class="rd-scroll" id="rdScroll">
+    <div class="rd-in">
+      <header class="rd-hero">
+        <p class="mono kicker">A STORY OF A TEA-SHOP BOY</p>
+        <h2>Resistance, and the voltage to overcome it</h2>
+        <p class="rd-epi">My father did not get the success he worked so hard for, yet his greatest success is me. I am the next chapter of his legacy.</p>
+      </header>
+
+      <div class="lang en">
+        <article class="ch"><span class="ch-n">01</span><h3>Roots</h3>
+          <p>My name is Abdullah Mukter (Jewel), and I am currently studying in the Department of Electrical and Electronic Engineering (EEE) at CUET.</p>
+          <p>My father runs a tea shop in our village, and as a boy I was a helping hand there. He is an educated man who studied through great hardship, and in those days he supported his family by giving private tuition himself. He was an expert in mathematics. My mother is a homemaker and a woman of firm principles.</p></article>
+        <article class="ch"><span class="ch-n">02</span><h3>The madrasa</h3>
+          <p>My learning began at a madrasa, the Ishaatus Sunnah Tahfizul Quran Noorani Madrasa. I studied there from the nursery class to class three, and I finished my madrasa life by securing second place in class three.</p></article>
+        <article class="ch"><span class="ch-n">03</span><h3>Primary school</h3>
+          <p>Next I joined the primary school of my area, South-East Mekhal Government Primary School, in class four. My roll number was 41 out of 45 students. In the first term exam I stood first, and after standing first again in the annual exam I moved up to class five. I kept first position in every exam and finished primary school with distinction.</p>
+          <p>In our time there was the PSC examination. I received an A+, the only student in our primary school to do so, and I also passed all three scholarship examinations that I sat for.</p></article>
+        <article class="ch"><span class="ch-n">04</span><h3>High school</h3>
+          <p>My journey continued at the high school of my area. I was admitted to class six at South Mekhal High School. There was an admission test in our time, and I began by securing second place among 126 students. The first place went to a girl who was enormously talented!</p>
+          <p>From class six to class ten I held first position continuously and finished my school life that way. In class eight I passed the JSC examination with a GPA of 4.93. In class nine I took the Science group, but in school I could not do very well in science, because I understood the concepts less. My school life ended with a GPA of 4.72 in the SSC. The result was very disappointing, as I had been expecting A+. I was heartbroken, and I began my college life at Hathazari College.</p></article>
+        <article class="ch storm"><span class="ch-n">05</span><h3>The storm</h3>
+          <p>I forgot to mention something. During my SSC Islamic studies exam, my mother was diagnosed with blood cancer (stage 4 lymphoma). At that time my whole family, and my own state of mind, were completely broken. The income from my father's tea shop was nowhere near enough for her treatment, and my family was financially devastated.</p></article>
+        <article class="ch"><span class="ch-n">06</span><h3>College</h3>
+          <p>In our time about 305 or 306 students were admitted to the college, and 121 of them were A+ students, which made me feel very small. Even so, I kept studying with a firm mind, and in the first-year final exam I secured third place. That achievement was enough to turn my life around. I got a completely different idea of my own potential, and a mindset of <em>“I can do it”</em> began to take root.</p>
+          <p>Because we were not financially comfortable, coaching was a real problem for me in college. At that time <strong>Shanta Apu</strong> extended a helping hand and taught me Chemistry and Biology for two full years, free of charge. I am most grateful to her.</p>
+          <p>Going on like this, I became even more focused and kept working tirelessly. In the second-year final exam I stood first, and that achievement raised my confidence greatly.</p></article>
+        <article class="ch"><span class="ch-n">07</span><h3>HSC and the admission season</h3>
+          <p>I completed my college life in HSC 2022 with 1206 out of 1300, the highest marks in the college, and a Golden A+. Then the hard phase of admission tests began, and I successfully cracked CUET, Dhaka University and SUST.</p>
+          <p>From our college, I alone was selected to sit the BUET exam (I had 96% marks in Physics, Chemistry and Math, and BUET wanted 92%). I passed the BUET preliminary and was selected for the written round, but when I did not find my name in the written result, I was somewhat broken. Even so, Allah has given me many things that were beyond my expectations, Alhamdulillah.</p></article>
+        <article class="ch last"><span class="ch-n">08</span><h3>CUET</h3>
+          <p>And so my journey began with admission to EEE at CUET in October 2023. Since then I have been supporting my family through tuition, and Alhamdulillah, Allah has kept me well and has carried me along until now.</p>
+          <p class="sign mono">— Abdullah Mukter Jewel</p></article>
+      </div>
+
+      <div class="lang bn" lang="bn">
+      <p>আমি আব্দুল্লাহ মুক্তার(জুয়েল), বর্তমানে পড়াশুনা করছি EEE Department এ, CUET।আমার বাবা আমার গ্রামে চায়ের দোকান করেন এবং শিক্ষিত একজন ব্যক্তি ছিলো যিনি জীবনে অনেক কষ্ট করে নিজের পড়াশুনা করছে এবং ওই সময়ে নিজে টিউশন করে তার পরিবার কে চালিয়েছে(He was expert in mathematics at that time)। আমার আম্মু একজন গৃহিণী এবং নীতিবান একজন মেয়ে। আমার পড়াশুনার যাত্রা শুরু হয় মাদ্রাসার মাধ্যমে, নাম তার এশায়াতুস সুন্নাহ্ তাহফিজুল কুরআন নূরানী মাদ্রাসা। এইখানে আমি শিশু শ্রেণি থেকে তৃতীয় শ্রেণি পর্যন্ত পড়াশোনা শেষ করি, তৃতীয় শ্রেণিতে দ্বিতীয় স্থান অর্জন করে আমি মাদ্রাসা জীবন শেষ করি।</p>
+      <p>এরপর আমার পড়াশুনার যাত্রা শুরু হয় আমার এলাকার প্রাইমারী স্কুলের মাধ্যমে, দক্ষিণ পূর্ব মেখল সরকারি প্রাথমিক বিদ্যালয়ে আমি চতুর্থ শ্রেণিতে ভর্তি হয়। রোল ছিল ৪১ মোট ৪৫ জন স্টুডেন্ট এর মধ্যে। প্রথম সাময়িক পরীক্ষায় আমি প্রথম স্থান অর্জন করি, এইভাবে বার্ষিক পরীক্ষায় প্রথম স্থান অর্জন করে আমি পঞ্চম শ্রেণি তে উঠি। এবং কৃতিত্বের সাথে প্রতিটি পরীক্ষায় 1st position ধরে রেখে আমার প্রাথমিক বিদ্যালয়ের জীবনের সমাপ্তি ঘটায়। আমাদের সময় PSC পরীক্ষা ছিলো, আমি A+ পাই একমাত্র আমাদের প্রাথমিক বিদ্যালয়ে,এবং এর পাশাপাশি ৩ টা বৃত্তি পরীক্ষায় ৩ টা তেই উত্তীর্ণ হয়।</p>
+      <p>এরপরে আমার শিক্ষা জীবনের যাত্রা শুরু হয় আমার এলাকার উচ্চ বিদ্যালয়ে। দক্ষিণ মেখল উচ্চ বিদ্যালয়ে ষষ্ঠ শ্রেণিতে ভর্তি হয়। আমাদের সময়ে ভর্তি পরীক্ষা ছিলো, আমি মোট ১২৬ জন স্টুডেন্ট এর মধ্যে ২য় স্থান অর্জন করে যাত্রা শুরু করি। আমাদের মধ্যে প্রথম ছিল এক মেয়ে, প্রচুর ট্যালেন্টেড ছিলো! যাই হোক,আমি ক্লাস ৬ থেকে ক্লাস ১০ পর্যন্ত লাগাতার 1st position ধরে রেখেই আমার স্কুল জীবন শেষ করি। ক্লাস ৮ এ JSC পরীক্ষায় আমি জিপিএ 4.93 পেয়ে উত্তীর্ণ হয়। ক্লাস 9 এ আমি সায়েন্স নি। কিন্তু স্কুল জীবনে আমি বিজ্ঞান নিয়ে খুব একটা ভালো করতে পারিনি,কনসেপ্ট কম বুঝতাম। যাই হোক এসএসসি তে 4.72 পেয়ে আমার স্কুল জীবন শেষ হয়। এবং আমার রেজাল্টটা ছিল খুবই হতাশাজনক, আমি A+ আশা করছিলাম। অনেক ভেঙে পরি,এবং নিজের জীবনের কলেজ জীবনের যাত্রা শুরু করি হাটহাজারী কলেজ দিয়ে। আমাদের সময়ে মোট ৩০৫/৩০৬ জন শিক্ষার্থী ভর্তি হয় এবং তার মধ্যে ১২১ জন A+ প্রাপ্ত স্টুডেন্ট ছিলো যেখানে নিজেকে অনেক ছোট মনে হচ্ছিলো। তারমধ্যে নিজের পড়াশুনা খুব শক্ত মনে চালিয়ে যেতে থাকি এবং 1st year final পরীক্ষায় আমি তৃতীয় স্থান অর্জন করি। এই অর্জন টা আমার জীবনের মোড় ঘুরিয়ে দেওয়ার জন্য যথেষ্ট ছিলো,নিজের potential সম্পর্কে সম্পূর্ণ ভিন্ন ধারণা পেয়েছিলাম। I can do it, এই ধরনের মনোভাব চলে আসতে থাকলো।</p>
+      <p>এইখানে একটা কথা বলতে ভুলে গেছিলাম , এসএসসি এর ইসলাম ধর্ম পরীক্ষার সময় আমার আম্মুর ব্লাড ক্যান্সার (4th stage, lymphoma)ধরা পরে,ওই সময়ে আমার পুরো পরিবার,আমার মন মানসিকতা সম্পূর্ণ রূপে ভেঙে যাই। আমার আব্বুর চায়ের দোকান থেকে উপার্জিত অর্থ উনার চিকিৎসার জন্য মোটেও যথেষ্ট ছিলো না,এই সময়ে আমার পরিবার আর্থিকভাবে পুরোপুরি ভেঙে যাই।</p>
+      <p>কলেজ জীবনে আর্থিকভাবে সচ্ছল না থাকায় কোচিং করা নিয়ে ভালোই সমস্যা হচ্ছিলো তার মধ্যে আমাকে সাহায্যের হাত বাড়িয়ে দেন Shanta Apu, পুরো ২ বছর আমাকে Chemistry এবং biology পড়িয়েছিলেন ফ্রী তে। উনার প্রতি আমি সবচেয়ে বেশি কৃতজ্ঞ। এইভাবে চলতে চলতে আমার পড়াশুনায় আমি আরও মনোযোগ হয়,এবং নিরলস পরিশ্রম করে যাচ্ছি নিজের পড়াশুনা নিয়ে। 2nd year final পরীক্ষায় আমি প্রথম হয়। এই অর্জন আমার confidence অনেক বের যাই এবং এইভাবে নিজের HSC (২০২২) তে আমি ১৩০০ তে ১২০৬(highest number in college) পেয়ে Golden A+ সহকারে আমার কলেজ জীবন যাত্রা শেষ করি।</p>
+      <p>এরপর আমার জীবনের কঠিন যাত্রা শুরু হয় ভর্তি পরীক্ষার phase নিয়ে এবং আমি কৃতিত্বের সাথে CUET,Dhaka University, SUST crack করি। আমাদের কলেজ থেকে একমাত্র আমি BUET এর পরীক্ষায় বসার জন্য সিলেক্টেড হয়( I have 96% marks in physics, chemistry, Math and BUET want 92%)। BUET এর প্রিলি পাস করে রিটেন এর জন্য সিলেক্ট হয়,তবে রিটেন ফলাফলে নিজের নাম না পেয়ে কিছুটা ভেঙে পরি। তারপরেও আল্লাহ্ আমাকে অনেক কিছুই দিয়েছেন যা আমার এক্সপেক্টেশন ও ছিলো না, Alhamdulillah।</p>
+      <p>এইভাবে আমার যাত্রা শুরু হয় CUET এর EEE তে ভর্তির মাধ্যমে ২০২৩ সালে(অক্টোবর মাসে)। এরপর থেকে টিউশন করে আমি আমার পরিবার কে চালাচ্ছি এবং Alhamdulillah আল্লাহ্ যথেষ্ট ভালো রেখেছেন,আমাকে চালিয়ে নিচ্ছেন এখনো পর্যন্ত।</p>
+        <p class="sign mono">— আব্দুল্লাহ মুক্তার (জুয়েল)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="lb" id="lb" hidden>
   <button class="lb-x" aria-label="Close">×</button>
   <button class="lb-n lb-p" aria-label="Previous">‹</button>
@@ -358,5 +459,6 @@
   <p id="lb-cap" class="mono"></p>
 </div>
 <script src="app.js"></script>
+<script src="extra.js"></script>
 </body>
 </html>
