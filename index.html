@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Abdullah Mukter Jewel — EEE Student, CUET</title>
+<meta name="description" content="Portfolio of Abdullah Mukter Jewel, Electrical and Electronic Engineering student at CUET, Bangladesh. ESP-32 projects, the PlanCraft 3D home planner, achievements and nature photography.">
+<meta name="theme-color" content="#05070f">
+<meta property="og:title" content="Abdullah Mukter Jewel — Portfolio">
+<meta property="og:description" content="EEE student at CUET. Embedded systems, web tools, and a curious mind.">
+<meta property="og:image" content="img/portrait.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070f'/%3E%3Cpath d='M6 32 Q16 6 26 32 T46 32 T58 32' fill='none' stroke='%233de8ff' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Home"><span class="brand-wave"><svg viewBox="0 0 40 24" width="34" height="20"><path d="M2 12 Q9 -4 16 12 T30 12 T38 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>A. M. Jewel</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="menu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#interests">Curiosity</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact" class="cta-link">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow mono"><span class="dot"></span> Electrical &amp; Electronic Engineering · CUET</p>
+    <h1><span class="hello">Hello, I am</span><span class="name">Abdullah Mukter Jewel</span></h1>
+    <p class="typed-line"><span id="typed" class="mono"></span><span class="caret">|</span></p>
+    <p class="lead">I enjoy turning ideas into working circuits and useful software. From a home-planning web tool to ESP-32 sensor projects, I like building things that can be measured, tested and improved, and I stay curious about physics, space and history along the way.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View my projects</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+    <ul class="hero-meta mono">
+      <li>Chattogram, Bangladesh</li>
+      <li>Open to internships &amp; collaboration</li>
+    </ul>
+  </div>
+  <div class="hero-visual">
+    <div class="portrait" data-tilt>
+      <span class="ring"></span>
+      <img src="img/portrait.webp" width="720" height="720" alt="Portrait of Abdullah Mukter Jewel" fetchpriority="high">
+      <span class="tag t1 mono">V(t) = V<sub>m</sub> sin(ωt + φ)</span>
+      <span class="tag t2 mono">EEE · CUET</span>
+    </div>
+    <div class="scope" aria-label="Animated Fourier series drawing a square wave">
+      <div class="scope-head mono"><span>FOURIER · SQUARE WAVE</span><span id="harm">n = 5</span></div>
+      <canvas id="epi"></canvas>
+      <div class="scope-foot mono">f(t) = (4/π) Σ sin((2k−1)t) / (2k−1)</div>
+    </div>
+  </div>
+  <a class="scroll-cue mono" href="#about" aria-label="Scroll down">scroll<span></span></a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="sec-head reveal"><span class="idx mono">01</span><h2>About me</h2></div>
+  <div class="about-grid">
+    <div class="about-copy reveal">
+      <p>I am a student of Electrical and Electronic Engineering at the <strong>Chittagong University of Engineering and Technology (CUET)</strong>, Bangladesh. I am drawn to the place where electronics meets software, where a few lines of code can make a circuit sense, decide and respond.</p>
+      <p>My first big personal project was <strong>PlanCraft 3D</strong>, a free home planning tool I started in order to plan my family's house. It grew into a complete 2D and 3D planner with a cost estimator that uses local Bangladeshi material prices. Alongside it, I build embedded projects on the <strong>ESP-32</strong> to understand sensors, timing and real-world signals.</p>
+      <p>Outside the lab I read and think about quantum physics, astrophysics, geopolitics and history, and I take photographs of nature whenever the light is kind.</p>
+      <div class="chips">
+        <span>Embedded systems</span><span>ESP-32</span><span>Arduino C++</span><span>Sensors &amp; displays</span><span>JavaScript</span><span>React</span><span>Three.js</span><span>Python</span><span>Git &amp; GitHub</span><span>Technical writing</span>
+      </div>
+    </div>
+    <div class="about-side reveal">
+      <div class="edu">
+        <h3 class="mono">EDUCATION</h3>
+        <div class="edu-item"><b>B.Sc. in Electrical &amp; Electronic Engineering</b><span>Chittagong University of Engineering and Technology (CUET)</span><em class="mono">Ongoing</em></div>
+        <div class="edu-item"><b>Higher Secondary Certificate, Science</b><span>Hathazari College, Chattogram</span><em class="mono">2022</em></div>
+      </div>
+      <div class="stats">
+        <div><b data-count="4">0</b><span>ESP-32 projects</span></div>
+        <div><b data-count="10" data-plus="1">0</b><span>floors in PlanCraft</span></div>
+        <div><b data-count="4">0</b><span>currencies in estimator</span></div>
+        <div><b data-count="10">0</b><span>published guides</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="sec">
+  <div class="sec-head reveal"><span class="idx mono">02</span><h2>Projects</h2></div>
+
+  <article class="featured reveal">
+    <div class="featured-copy">
+      <p class="eyebrow mono">FEATURED · WEB APPLICATION</p>
+      <h3>PlanCraft 3D</h3>
+      <p>A free 2D and 3D home planner that runs in the browser and on Android phones. Draw walls, place doors, windows and furniture, add up to ten floors, then walk around the building in 3D. A built-in cost estimator turns the plan into quantities and a budget with local Bangladeshi prices.</p>
+      <ul class="ticks">
+        <li>Column grid, plot boundary and setbacks, compass and sun direction</li>
+        <li>Plumbing layer with pipe tool, dimension tool and DXF export for CAD</li>
+        <li>Rebar schedule by bar size and costs in BDT, USD, INR and EUR</li>
+        <li>Touch-friendly interface with 3D quality settings for modest phones</li>
+      </ul>
+      <div class="btns"><a class="btn primary" href="https://abdullah-jewel.github.io/Building-PlanCraft-2D-3D/" target="_blank" rel="noopener">Open PlanCraft 3D ↗</a><a class="btn ghost" href="https://github.com/abdullah-jewel/Building-PlanCraft-2D-3D" target="_blank" rel="noopener">Source on GitHub ↗</a></div>
+      <div class="chips small"><span>JavaScript</span><span>React</span><span>Three.js</span><span>WebGL</span><span>DXF</span></div>
+    </div>
+    <div class="featured-art" aria-hidden="true">
+      <svg viewBox="0 0 320 260" class="blueprint">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path class="draw" d="M30 220 V90 L160 30 L290 90 V220 Z"/>
+          <path class="draw d2" d="M30 220 H290"/>
+          <path class="draw d3" d="M130 220 V160 H190 V220"/>
+          <path class="draw d4" d="M60 120 H110 V160 H60 Z"/>
+          <path class="draw d4" d="M210 120 H260 V160 H210 Z"/>
+          <path class="draw d5" d="M30 240 H290 M30 234 V246 M290 234 V246" stroke-width="1.2"/>
+          <circle class="draw d5" cx="160" cy="88" r="14"/>
+        </g>
+        <text x="160" y="256" text-anchor="middle" class="mono" font-size="10" fill="currentColor">12.40 m</text>
+      </svg>
+    </div>
+  </article>
+
+  <div class="sub-head reveal"><h3>ESP-32 embedded projects</h3><p>Hands-on builds, each one tested on the breadboard and recorded on video.</p></div>
+
+  <div class="cards">
+    <!-- Distance -->
+    <article class="card reveal" data-tilt>
+      <div class="slider" style="--ar:478/850">
+        <img class="slide on" src="img/dist-1.webp" loading="lazy" alt="ESP-32 with ultrasonic sensor and OLED display on a breadboard">
+        <img class="slide" src="img/dist-2.webp" loading="lazy" alt="Ultrasonic sensor measuring distance against a ruler">
+        <img class="slide" src="img/dist-3.webp" loading="lazy" alt="OLED display showing the measured distance">
+        <button class="sl prev" aria-label="Previous image">‹</button><button class="sl next" aria-label="Next image">›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="card-body">
+        <p class="eyebrow mono">PROJECT 01 · MEASUREMENT</p>
+        <h3>Distance Measurement with ESP-32</h3>
+        <p>An ultrasonic sensor sends a pulse and times its echo. The ESP-32 converts the time of flight into centimetres and shows the reading live on an OLED display. I checked the output against a ruler to see how accurate it really is.</p>
+        <details><summary>How it works</summary>
+          <ol><li>The ESP-32 triggers the HC-SR04 with a 10 µs pulse.</li><li>It measures the width of the echo pulse.</li><li>Distance = (time × speed of sound) ÷ 2.</li><li>The result is drawn on the I²C OLED display.</li></ol>
+        </details>
+        <div class="chips small"><span>ESP-32</span><span>HC-SR04</span><span>OLED (I²C)</span><span>Arduino C++</span></div>
+      </div>
+    </article>
+
+    <!-- IR -->
+    <article class="card reveal" data-tilt>
+      <div class="slider" style="--ar:478/850">
+        <img class="slide on" src="img/ir-1.webp" loading="lazy" alt="ESP-32 with IR obstacle sensor and green LED lit">
+        <img class="slide" src="img/ir-2.webp" loading="lazy" alt="Hand placed in front of the IR sensor, warning LED turns on">
+        <img class="slide" src="img/ir-3.webp" loading="lazy" alt="Arduino IDE showing obstacle detection code and serial output">
+        <button class="sl prev" aria-label="Previous image">‹</button><button class="sl next" aria-label="Next image">›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="card-body">
+        <p class="eyebrow mono">PROJECT 02 · SENSING</p>
+        <h3>Obstruction Detection with IR Sensor</h3>
+        <p>An infrared obstacle sensor watches the path. While it is clear, a green LED stays on. When a hand or object comes close, the ESP-32 switches to a red warning LED and prints &ldquo;Obstacle Detected&rdquo; on the serial monitor.</p>
+        <details><summary>How it works</summary>
+          <ol><li>The IR transmitter emits light and the receiver watches for reflection.</li><li>A digital output from the module goes LOW when something is near.</li><li>The ESP-32 reads the pin and switches the LEDs accordingly.</li><li>The status is also logged over serial for debugging.</li></ol>
+        </details>
+        <div class="chips small"><span>ESP-32</span><span>IR sensor</span><span>LEDs</span><span>Serial monitor</span></div>
+      </div>
+    </article>
+
+    <!-- Tachometer -->
+    <article class="card reveal" data-tilt>
+      <div class="slider" style="--ar:464/832">
+        <img class="slide on" src="img/tacho-1.webp" loading="lazy" alt="ESP-32 tachometer circuit beside a commercial digital tachometer">
+        <img class="slide" src="img/tacho-2.webp" loading="lazy" alt="Comparing the ESP-32 RPM reading with a handheld tachometer">
+        <button class="sl prev" aria-label="Previous image">‹</button><button class="sl next" aria-label="Next image">›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="card-body">
+        <p class="eyebrow mono">PROJECT 03 · INSTRUMENTATION</p>
+        <h3>Tachometer with ESP-32</h3>
+        <p>A contactless RPM meter. The ESP-32 counts pulses from an optical sensor as a motor spins and displays the speed on an OLED screen. I compared it side by side with a commercial handheld tachometer to validate the readings.</p>
+        <details><summary>How it works</summary>
+          <ol><li>A sensor produces one pulse per rotation (or per blade).</li><li>An interrupt on the ESP-32 timestamps every pulse.</li><li>RPM = 60 ÷ period between pulses.</li><li>The value is smoothed and shown on the OLED.</li></ol>
+        </details>
+        <div class="chips small"><span>ESP-32</span><span>Interrupts</span><span>OLED</span><span>Calibration</span></div>
+      </div>
+    </article>
+
+    <!-- Traffic -->
+    <article class="card reveal wide" data-tilt>
+      <div class="slider" style="--ar:848/478">
+        <img class="slide on" src="img/tr-1.webp" loading="lazy" alt="Traffic light model with green LED on">
+        <img class="slide" src="img/tr-3.webp" loading="lazy" alt="Traffic light model with yellow LED on">
+        <img class="slide" src="img/tr-2.webp" loading="lazy" alt="Traffic light model with red LED on">
+        <img class="slide" src="img/tr-4.webp" loading="lazy" alt="Arduino IDE with the traffic light program">
+        <button class="sl prev" aria-label="Previous image">‹</button><button class="sl next" aria-label="Next image">›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="card-body">
+        <p class="eyebrow mono">PROJECT 04 · CONTROL</p>
+        <h3>Traffic Light Controller</h3>
+        <p>A three-colour traffic signal driven by the ESP-32. It cycles through green, yellow and red with timed delays, which is a clean first exercise in GPIO outputs and sequential state control.</p>
+        <details><summary>How it works</summary>
+          <ol><li>Three GPIO pins are set as outputs, one per LED.</li><li>Green &rarr; yellow &rarr; red, each held for a fixed time.</li><li>The loop repeats forever like a real signal.</li><li>Next step: pedestrian button and timing by interrupt.</li></ol>
+        </details>
+        <div class="chips small"><span>ESP-32</span><span>GPIO</span><span>State sequence</span><span>Arduino C++</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests" class="sec">
+  <div class="sec-head reveal"><span class="idx mono">03</span><h2>What keeps me curious</h2></div>
+  <p class="sec-intro reveal">Engineering teaches me how to build. These subjects remind me to keep asking why.</p>
+  <div class="int-grid">
+    <article class="int reveal" data-tilt>
+      <svg viewBox="0 0 120 120" class="ico" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2">
+          <ellipse class="orb o1" cx="60" cy="60" rx="50" ry="18"/>
+          <ellipse class="orb o2" cx="60" cy="60" rx="50" ry="18"/>
+          <ellipse class="orb o3" cx="60" cy="60" rx="50" ry="18"/>
+        </g>
+        <circle cx="60" cy="60" r="6" class="nuc"/>
+        <circle r="3.5" class="el" cx="110" cy="60"/>
+      </svg>
+      <h3>Quantum Physics</h3>
+      <p>Waves that are also particles, probabilities instead of certainties. It is the physics behind every transistor I use.</p>
+      <span class="eq mono">iħ ∂ψ/∂t = Ĥψ</span>
+    </article>
+    <article class="int reveal" data-tilt>
+      <svg viewBox="0 0 120 120" class="ico" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".5"><circle cx="60" cy="60" r="22"/><circle cx="60" cy="60" r="38"/><circle cx="60" cy="60" r="54"/></g>
+        <circle cx="60" cy="60" r="9" class="sun"/>
+        <g class="spin s1"><circle cx="82" cy="60" r="3.5"/></g>
+        <g class="spin s2"><circle cx="98" cy="60" r="5"/></g>
+        <g class="spin s3"><circle cx="114" cy="60" r="3"/></g>
+      </svg>
+      <h3>Astrophysics</h3>
+      <p>Stars, orbits and the scale of the cosmos. I even photographed a 22° solar halo, which you can see in the gallery below.</p>
+      <span class="eq mono">F = G m₁m₂ / r²</span>
+    </article>
+    <article class="int reveal" data-tilt>
+      <svg viewBox="0 0 120 120" class="ico" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="60" cy="60" r="50"/>
+          <ellipse cx="60" cy="60" rx="50" ry="14" opacity=".5"/>
+          <path d="M10 60h100M18 36h84M18 84h84" opacity=".5"/>
+          <ellipse class="mer" cx="60" cy="60" rx="50" ry="50"><animate attributeName="rx" values="50;0;50" dur="6s" repeatCount="indefinite"/></ellipse>
+          <ellipse class="mer" cx="60" cy="60" rx="25" ry="50"><animate attributeName="rx" values="25;50;0;25" dur="6s" repeatCount="indefinite"/></ellipse>
+        </g>
+        <circle r="3" class="pin"><animateMotion dur="6s" repeatCount="indefinite" path="M30 40 Q60 20 90 50 T60 96"/></circle>
+      </svg>
+      <h3>Geopolitics</h3>
+      <p>How geography, energy, trade and power shape nations, and why a single decision in one capital can be felt across the world.</p>
+      <span class="eq mono">interests × geography</span>
+    </article>
+    <article class="int reveal" data-tilt>
+      <svg viewBox="0 0 120 120" class="ico" aria-hidden="true">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="2"/>
+        <g stroke="currentColor" stroke-width="2" opacity=".6"><path d="M60 14v8M60 98v8M14 60h8M98 60h8"/></g>
+        <line class="hand h1" x1="60" y1="60" x2="60" y2="24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <line class="hand h2" x1="60" y1="60" x2="60" y2="38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="60" cy="60" r="4" class="sun"/>
+      </svg>
+      <h3>History</h3>
+      <p>Empires, ideas and turning points. Studying the past is the best way I know to understand the choices we face today.</p>
+      <span class="eq mono">past → present → future</span>
+    </article>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="sec">
+  <div class="sec-head reveal"><span class="idx mono">04</span><h2>Achievements</h2></div>
+  <div class="timeline">
+    <article class="ach reveal">
+      <div class="ach-year mono">2026</div>
+      <div class="ach-body">
+        <h3>Champion, Shortpitch Cricket Tournament</h3>
+        <p>Won the Shaheed Abu Sayed Hall Shortpitch Cricket Tournament 2026 with my team, and was honoured with the <b>Player of the Match</b> awards and the <b>Player of the Tournament</b> trophy.</p>
+        <div class="pair">
+          <button class="zoom" data-full="img/champion.webp" data-cap="Tournament Champion trophy and medal, 2026"><img src="img/champion.webp" loading="lazy" alt="Holding the Champion trophy with a medal"></button>
+          <button class="zoom" data-full="img/potm.webp" data-cap="Player of the Match and Player of the Tournament awards, 2026"><img src="img/potm.webp" loading="lazy" alt="With the Player of the Match and Player of the Tournament awards"></button>
+        </div>
+      </div>
+    </article>
+    <article class="ach reveal">
+      <div class="ach-year mono">2022</div>
+      <div class="ach-body">
+        <h3>Higher Secondary Completion Award</h3>
+        <p>Received the Government of Bangladesh Higher Secondary Completion Award (HSCA) 2022 in the Science group, under the Chattogram Board, as a student of Hathazari College.</p>
+        <div class="pair single">
+          <button class="zoom" data-full="img/crystal.webp" data-cap="Higher Secondary Completion Award crystal, 2022"><img src="img/crystal.webp" loading="lazy" alt="Crystal award for the Higher Secondary Completion Award 2022"></button>
+        </div>
+      </div>
+    </article>
+    <article class="ach reveal">
+      <div class="ach-year mono">2022</div>
+      <div class="ach-body">
+        <h3>Coaching recognition in Biology and Chemistry</h3>
+        <p>Honoured with recognition trophies in Biology and Chemistry for my HSC 2022 performance. The trophies sit proudly on my shelf alongside my sports medals.</p>
+        <div class="pair single wide-img">
+          <button class="zoom" data-full="img/wall.webp" data-cap="My trophy wall: academic awards, cricket trophies and medals"><img src="img/wall.webp" loading="lazy" alt="Wall shelf with trophies, certificate and medals"></button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="sec">
+  <div class="sec-head reveal"><span class="idx mono">05</span><h2>Through my lens</h2></div>
+  <p class="sec-intro reveal">Photography is my quiet way of noticing small things: a droplet, a rainbow, a ring of light around the sun. Tap a photo to enlarge it.</p>
+  <div class="gal">
+    <button class="g a reveal" data-full="img/nat-a-drop-of-world.webp" data-cap="A Drop of World"><img src="img/nat-a-drop-of-world.webp" loading="lazy" alt="A water droplet hanging from a green leaf"><span>A Drop of World</span></button>
+    <button class="g b reveal" data-full="img/nat-circular-sun.webp" data-cap="Circular Sun — a 22° halo"><img src="img/nat-circular-sun.webp" loading="lazy" alt="A circular halo around the sun through clouds"><span>Circular Sun</span></button>
+    <button class="g c reveal" data-full="img/nat-flower-with-rainbow.webp" data-cap="Flower with Rainbow"><img src="img/nat-flower-with-rainbow.webp" loading="lazy" alt="A green tendril curling under a rainbow over a field"><span>Flower with Rainbow</span></button>
+    <button class="g d reveal" data-full="img/nat-a-black-and-white-life.webp" data-cap="A Black and White Life"><img src="img/nat-a-black-and-white-life.webp" loading="lazy" alt="Pink flowers in colour against a black and white background"><span>A Black and White Life</span></button>
+    <button class="g e reveal" data-full="img/nat-a-tree.webp" data-cap="A Tree"><img src="img/nat-a-tree.webp" loading="lazy" alt="A tree trunk in front of green fields and blue sky"><span>A Tree</span></button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec contact">
+  <div class="sec-head reveal"><span class="idx mono">06</span><h2>Let us connect</h2></div>
+  <div class="contact-card reveal">
+    <div>
+      <p class="big">I would be glad to hear from you, whether it is about an internship, a project, feedback on PlanCraft 3D, or simply a conversation about science.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:ajabd098@gmail.com">ajabd098@gmail.com</a>
+        <a class="btn ghost" href="https://github.com/abdullah-jewel" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn ghost" href="https://abdullah-jewel.github.io/Building-PlanCraft-2D-3D/" target="_blank" rel="noopener">PlanCraft 3D ↗</a>
+      </div>
+    </div>
+    <div class="contact-wave" aria-hidden="true"><svg viewBox="0 0 200 80" preserveAspectRatio="none"><path class="cw" d="M0 40 Q25 -10 50 40 T100 40 T150 40 T200 40" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot mono">
+  <span>© <span id="yr">2026</span> Abdullah Mukter Jewel</span>
+  <span>Built with HTML, CSS &amp; a little mathematics</span>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
+<div class="lb" id="lb" hidden>
+  <button class="lb-x" aria-label="Close">×</button>
+  <button class="lb-n lb-p" aria-label="Previous">‹</button>
+  <img alt="" id="lb-img">
+  <button class="lb-n lb-nx" aria-label="Next">›</button>
+  <p id="lb-cap" class="mono"></p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
