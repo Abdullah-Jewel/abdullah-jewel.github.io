@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Abdullah Mukter Jewel — EEE Student, CUET</title>
-<meta name="description" content="Portfolio of Abdullah Mukter Jewel, Electrical and Electronic Engineering student at CUET, Bangladesh. ESP-32 projects, the PlanCraft 3D home planner, achievements and nature photography.">
-<meta name="theme-color" content="#05070f">
+<meta name="description" content="Portfolio of Abdullah Mukter Jewel, Electrical and Electronic Engineering student at CUET, Bangladesh. ESP-32 projects, the PlanCraft 3D home planner, his story, achievements and nature photography.">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Abdullah Mukter Jewel — Portfolio">
 <meta property="og:description" content="EEE student at CUET. Embedded systems, web tools, and a curious mind.">
 <meta property="og:image" content="img/portrait.webp">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070f'/%3E%3Cpath d='M6 32 Q16 6 26 32 T46 32 T58 32' fill='none' stroke='%233de8ff' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff' stroke='%23dde5f2'/%3E%3Cpath d='M36 8 16 36h14l-3 20 22-30H34z' fill='%231d4ed8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 <div class="progress" id="progress"></div>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Home"><span class="brand-wave"><svg viewBox="0 0 40 24" width="34" height="20"><path d="M2 12 Q9 -4 16 12 T30 12 T38 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>A. M. Jewel</a>
+  <a class="brand" href="#top" aria-label="Home"><span class="brand-wave"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg></span><span class="brand-t">Abdullah Mukter Jewel</span></a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav id="menu">
     <a href="#about">About</a>
@@ -45,7 +45,7 @@
     <p class="eyebrow mono h-in" style="--d:.05s"><span class="dot"></span> Electrical &amp; Electronic Engineering · CUET</p>
     <h1 class="h-in" style="--d:.15s"><span class="hello">Hello, I am</span><span class="name" id="name">Abdullah Mukter Jewel</span></h1>
     <p class="typed-line h-in" style="--d:.3s"><span id="typed" class="mono"></span><span class="caret">|</span></p>
-    <p class="lead h-in" style="--d:.4s">I enjoy turning ideas into working circuits and useful software. From a home-planning web tool to ESP-32 sensor projects, I like building things that can be measured, tested and improved, and I stay curious about physics, space and history along the way.</p>
+    <p class="lead h-in" style="--d:.4s">I enjoy learning new things. No matter where I am or which subject I study, I focus only on what matters the most. I am always eager to understand how the world works, and how to create something that may change people's day-to-day lives. Giving up is not an option.</p>
     <div class="btns h-in" style="--d:.5s">
       <a class="btn primary" href="#projects">View my projects</a>
       <a class="btn story-btn" href="#story">Read my story</a>
@@ -63,11 +63,26 @@
       <span class="tag t1 mono">V(t) = V<sub>m</sub> sin(ωt + φ)</span>
       <span class="tag t2 mono">EEE · CUET</span>
     </div>
-    <div class="scope h-in" style="--d:.55s" aria-label="Animated Fourier series drawing a square wave">
-      <div class="scope-head mono"><span>FOURIER · SQUARE WAVE</span><span id="harm">n = 5</span></div>
-      <canvas id="epi"></canvas>
-      <div class="scope-foot mono">f(t) = (4/π) Σ sin((2k−1)t) / (2k−1)</div>
-    </div>
+    <div class="circuit h-in" style="--d:.55s" aria-label="Animated series circuit demonstrating Ohm's law">
+      <div class="cc-head mono"><span>OHM'S LAW · LIVE CIRCUIT</span><span id="ccR">R = 12 Ω</span></div>
+      <svg id="ccSvg" viewBox="0 0 420 230" role="img" aria-hidden="true">
+        <path id="ccPath" d="M60 55 H360 V175 H60 Z" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round"/>
+        <!-- battery -->
+        <rect x="44" y="100" width="32" height="30" fill="#fff"/>
+        <path d="M46 108 H74 M54 120 H66" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+        <text x="82" y="112" class="ccl">+</text><text x="22" y="112" class="ccl">V</text>
+        <!-- resistor -->
+        <rect x="150" y="43" width="120" height="24" fill="#fff"/>
+        <path d="M150 55 H170 l8 -13 l14 26 l14 -26 l14 26 l14 -26 l8 13 H270" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round"/>
+        <text x="210" y="32" class="ccl" text-anchor="middle">R</text>
+        <!-- lamp -->
+        <rect x="336" y="130" width="48" height="30" fill="#fff"/>
+        <circle id="ccLamp" cx="360" cy="145" r="17" fill="rgba(255,196,60,.1)" stroke="var(--ink)" stroke-width="2.4"/>
+        <path d="M349 134 L371 156 M371 134 L349 156" stroke="var(--ink)" stroke-width="2"/>
+        <g id="ccDots"></g>
+      </svg>
+      <div class="cc-read mono"><span>V = <b>12 V</b></span><span>I = V/R = <b id="ccI">1.00 A</b></span><span>P = <b id="ccP">12 W</b></span></div>
+    </div></div>
   </div>
   <a class="scroll-cue mono" href="#about" aria-label="Scroll down">scroll<span></span></a>
 </section>
@@ -79,7 +94,7 @@
     <div class="about-copy reveal">
       <p>I am a student of Electrical and Electronic Engineering at the <strong>Chittagong University of Engineering and Technology (CUET)</strong>, Bangladesh. I am drawn to the place where electronics meets software, where a few lines of code can make a circuit sense, decide and respond.</p>
       <p>My first big personal project was <strong>PlanCraft 3D</strong>, a free home planning tool I started in order to plan my family's house. It grew into a complete 2D and 3D planner with a cost estimator that uses local Bangladeshi material prices. Alongside it, I build embedded projects on the <strong>ESP-32</strong> to understand sensors, timing and real-world signals.</p>
-      <p>Outside the lab I read and think about quantum physics, astrophysics, geopolitics and history, and I take photographs of nature whenever the light is kind.</p>
+      <p>To support my family, I tutor almost ten SSC and HSC (Science) students. Outside the lab I read and think about quantum physics, astrophysics, geopolitics and history, and I take photographs of nature whenever the light is kind.</p>
       <div class="chips">
         <span>Embedded systems</span><span>ESP-32</span><span>Arduino C++</span><span>Sensors &amp; displays</span><span>JavaScript</span><span>React</span><span>Three.js</span><span>Python</span><span>Git &amp; GitHub</span><span>Technical writing</span>
       </div>
@@ -93,8 +108,8 @@
       <div class="stats">
         <div><b data-count="4">0</b><span>ESP-32 projects</span></div>
         <div><b data-count="10" data-plus="1">0</b><span>floors in PlanCraft</span></div>
-        <div><b data-count="4">0</b><span>currencies in estimator</span></div>
-        <div><b data-count="10">0</b><span>published guides</span></div>
+        <div class="wide"><b data-count="10" data-pre="1">0</b><span>students I tutor, SSC &amp; HSC (Science)</span></div>
+      </div>
       </div>
     </div>
   </div>
@@ -109,7 +124,8 @@
       <footer class="mono">— on growing up beside a village tea shop in South East Mekhal</footer>
     </blockquote>
     <div class="story-intro reveal">
-      <p>I grew up in the village of South East Mekhal, in Hathazari, Chattogram, helping in my father's tea shop. My father was an educated man and a gifted mathematician who raised us through tuition and hard work; my mother kept our home with strong values. Their sacrifice is the reason I study today.</p>
+      <p class="where mono">SOUTH EAST MEKHAL · HATHAZARI · CHATTOGRAM</p>
+      <p>I was born and raised in South East Mekhal, a village in Hathazari, Chattogram, and as a boy I was a helping hand in my father's tea shop. My father is an educated man who is very good in mathematics. He supported his family by tutoring and later opened the tea shop. My mother is a homemaker who keeps our home with strong values. Their sacrifice is the reason I study today.</p>
       <p class="rs">In a circuit, resistance never stops the current. It only asks for more voltage. This is the story of how I kept finding mine.</p>
       <button class="btn primary read-btn" id="openReader" type="button">Read my full story <span aria-hidden="true">→</span></button>
       <span class="mono lang-note">English · বাংলা</span>
@@ -119,14 +135,14 @@
   <div class="tl" id="tl">
     <div class="tl-line"><i class="tl-fill" id="tlFill"></i><b class="tl-spark" id="tlSpark"></b></div>
 
-    <article class="tl-node"><span class="tl-t mono">t₀</span><div class="tl-card"><h3>Roots</h3><p>Born into a tea-shop family. Father: self-made, a mathematics tutor. Mother: a homemaker of firm principles.</p></div></article>
+    <article class="tl-node"><span class="tl-t mono">t₀</span><div class="tl-card"><h3>Roots</h3><p>Born in South East Mekhal, Hathazari. My father, strong in mathematics, supported the family by tutoring and later opened a tea shop. My mother is a homemaker of firm principles.</p></div></article>
     <article class="tl-node"><span class="tl-t mono">t₁</span><div class="tl-card"><h3>Madrasa years</h3><p>Nursery to class 3 at a Noorani madrasa, finishing in <b>2nd place</b>.</p></div></article>
     <article class="tl-node"><span class="tl-t mono">t₂</span><div class="tl-card"><h3>Primary school</h3><p>Joined class 4 at roll 41 of 45, then stood <b>1st in every exam</b>. PSC <b>A+</b>, the only one in the school, plus <b>3 of 3</b> scholarships passed.</p></div></article>
     <article class="tl-node"><span class="tl-t mono">t₃</span><div class="tl-card"><h3>High school</h3><p>2nd among 126 in admission, then <b>1st from class 6 to 10</b>. JSC GPA <b>4.93</b>. SSC GPA 4.72, a result that hurt, because I had hoped for A+.</p></div></article>
     <article class="tl-node storm"><span class="tl-t mono">R↑</span><div class="tl-card"><h3>The storm</h3><p>During SSC my mother was diagnosed with stage-4 lymphoma. The tea shop could not cover her treatment and our family was shaken financially.</p></div></article>
     <article class="tl-node"><span class="tl-t mono">t₄</span><div class="tl-card"><h3>Hathazari College</h3><p>Among 121 A+ students I felt small, yet finished <b>3rd</b> in first year and <b>1st</b> in second year. <b>Shanta Apu</b> taught me Chemistry and Biology <b>free for two years</b>. I will always be grateful.</p></div></article>
     <article class="tl-node"><span class="tl-t mono">t₅</span><div class="tl-card"><h3>HSC 2022</h3><p><b>1206 / 1300</b>, the highest in college, Golden A+. Cracked <b>CUET, Dhaka University and SUST</b> and was shortlisted for the BUET written round.</p></div></article>
-    <article class="tl-node last"><span class="tl-t mono">t₆</span><div class="tl-card"><h3>CUET · EEE</h3><p>October 2023: began Electrical and Electronic Engineering, and since then I support my family through tutoring. Alhamdulillah, the journey continues.</p></div></article>
+    <article class="tl-node last"><span class="tl-t mono">t₆</span><div class="tl-card"><h3>CUET · EEE</h3><p>October 2023: began Electrical and Electronic Engineering. Since then I support my family by tutoring almost <b>10 SSC and HSC (Science)</b> students. Alhamdulillah, the journey continues.</p></div></article>
   </div>
 </section>
 
@@ -138,29 +154,20 @@
     <div class="featured-copy">
       <p class="eyebrow mono">FEATURED · WEB APPLICATION</p>
       <h3>PlanCraft 3D</h3>
-      <p>A free 2D and 3D home planner that runs in the browser and on Android phones. Draw walls, place doors, windows and furniture, add up to ten floors, then walk around the building in 3D. A built-in cost estimator turns the plan into quantities and a budget with local Bangladeshi prices.</p>
+      <p>A free 2D and 3D home planner that I created, which runs in the browser and on Android phones. It started when I needed to plan my family's house. You draw walls, place doors, windows and furniture, add up to ten floors, and then walk around the building in 3D. A built-in cost estimator turns the plan into quantities and a budget using local Bangladeshi prices.</p>
       <ul class="ticks">
         <li>Column grid, plot boundary and setbacks, compass and sun direction</li>
         <li>Plumbing layer with pipe tool, dimension tool and DXF export for CAD</li>
         <li>Rebar schedule by bar size and costs in BDT, USD, INR and EUR</li>
         <li>Touch-friendly interface with 3D quality settings for modest phones</li>
       </ul>
-      <div class="btns"><a class="btn primary" href="https://abdullah-jewel.github.io/Building-PlanCraft-2D-3D/" target="_blank" rel="noopener">Open PlanCraft 3D ↗</a><a class="btn ghost" href="https://github.com/abdullah-jewel/Building-PlanCraft-2D-3D" target="_blank" rel="noopener">Source on GitHub ↗</a></div>
       <div class="chips small"><span>JavaScript</span><span>React</span><span>Three.js</span><span>WebGL</span><span>DXF</span></div>
     </div>
-    <div class="featured-art" aria-hidden="true">
-      <svg viewBox="0 0 320 260" class="blueprint">
-        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path class="draw" d="M30 220 V90 L160 30 L290 90 V220 Z"/>
-          <path class="draw d2" d="M30 220 H290"/>
-          <path class="draw d3" d="M130 220 V160 H190 V220"/>
-          <path class="draw d4" d="M60 120 H110 V160 H60 Z"/>
-          <path class="draw d4" d="M210 120 H260 V160 H210 Z"/>
-          <path class="draw d5" d="M30 240 H290 M30 234 V246 M290 234 V246" stroke-width="1.2"/>
-          <circle class="draw d5" cx="160" cy="88" r="14"/>
-        </g>
-        <text x="160" y="256" text-anchor="middle" class="mono" font-size="10" fill="currentColor">12.40 m</text>
-      </svg>
+    <div class="pc-shots">
+      <button class="zoom pcs" data-full="img/pc-plan2d.webp" data-cap="PlanCraft 3D: 2D floor plan"><img src="img/pc-plan2d.webp" loading="lazy" alt="2D floor plan editor of PlanCraft 3D"><span>2D floor plan</span></button>
+      <button class="zoom pcs" data-full="img/pc-view3d.webp" data-cap="PlanCraft 3D: 3D view"><img src="img/pc-view3d.webp" loading="lazy" alt="3D view of a house in PlanCraft 3D"><span>3D view</span></button>
+      <button class="zoom pcs" data-full="img/pc-plumb2d.webp" data-cap="PlanCraft 3D: plumbing layer"><img src="img/pc-plumb2d.webp" loading="lazy" alt="Plumbing layer with pipes in PlanCraft 3D"><span>Plumbing layer</span></button>
+      <button class="zoom pcs" data-full="img/pc-cost.webp" data-cap="PlanCraft 3D: cost estimate and rebar schedule"><img src="img/pc-cost.webp" loading="lazy" alt="Cost estimate with rebar schedule in PlanCraft 3D"><span>Cost estimate</span></button>
     </div>
   </article>
 
@@ -308,6 +315,16 @@
       <span class="eq mono">past → present → future</span>
     </article>
   </div>
+  <div class="space reveal">
+    <div class="space-head"><p class="eyebrow mono">ASTROPHYSICS CORNER</p><h3>Black holes and bridges through space</h3>
+      <p>Two visualisations from my explorations of general relativity: a Schwarzschild black hole and an Einstein&ndash;Rosen bridge. Drag to rotate and scroll to zoom in the interactive versions.</p></div>
+    <div class="space-grid">
+      <figure><button class="zoom sp" data-full="img/space-black-hole.webp" data-cap="Schwarzschild black hole in 3D: event horizon, photon sphere, accretion disk and gravitational lensing"><img src="img/space-black-hole.webp" loading="lazy" alt="3D visualisation of a Schwarzschild black hole with accretion disk"></button>
+        <figcaption><b>Schwarzschild black hole</b><span>Event horizon at r = r<sub>s</sub>, photon sphere at r = 1.5 r<sub>s</sub>, accretion disk and gravitational lensing, where r<sub>s</sub> = 2GM/c².</span></figcaption></figure>
+      <figure><button class="zoom sp" data-full="img/space-primes-bridge.webp" data-cap="Einstein-Rosen bridge made of prime numbers: a black hole on one side and a white hole on the other"><img src="img/space-primes-bridge.webp" loading="lazy" alt="Einstein-Rosen bridge visualised with prime numbers flowing between a black hole and a white hole"></button>
+        <figcaption><b>Einstein&ndash;Rosen bridge of primes</b><span>A black hole and a white hole joined at the singularity, with 1,652 prime numbers flowing in and out through the throat.</span></figcaption></figure>
+    </div>
+  </div>
 </section>
 
 <!-- VOICES -->
@@ -350,8 +367,8 @@
     <article class="ach reveal">
       <div class="ach-year mono">2022</div>
       <div class="ach-body">
-        <h3>Coaching recognition in Biology and Chemistry</h3>
-        <p>Honoured with recognition trophies in Biology and Chemistry for my HSC 2022 performance. The trophies sit proudly on my shelf alongside my sports medals.</p>
+        <h3>Trophies and recognition</h3>
+        <p>Honoured with recognition trophies in Biology and Chemistry, the Completion Award from the government for my HSC 2022 performance, and trophies from cricket. The trophies sit proudly on my shelf alongside my sports medals.</p>
         <div class="pair single wide-img">
           <button class="zoom" data-full="img/wall.webp" data-cap="My trophy wall: academic awards, cricket trophies and medals"><img src="img/wall.webp" loading="lazy" alt="Wall shelf with trophies, certificate and medals"></button>
         </div>
@@ -380,22 +397,22 @@
 <section id="contact" class="sec contact">
   <div class="sec-head reveal"><span class="idx mono">08</span><h2>Let us connect</h2></div>
   <div class="contact-card reveal">
-    <div>
-      <p class="big">I would be glad to hear from you, whether it is about an internship, a project, feedback on PlanCraft 3D, or simply a conversation about science.</p>
-      <div class="btns">
-        <a class="btn primary" href="mailto:ajabd098@gmail.com">ajabd098@gmail.com</a>
-        <a class="btn ghost" href="https://github.com/abdullah-jewel" target="_blank" rel="noopener">GitHub ↗</a>
-        <a class="btn ghost" href="https://abdullah-jewel.github.io/Building-PlanCraft-2D-3D/" target="_blank" rel="noopener">PlanCraft 3D ↗</a>
-      </div>
+    <p class="big">I would be glad to hear from you, whether it is about an internship, a project, feedback on my work, or simply a conversation about science.</p>
+    <div class="socs">
+        <a class="soc mail" href="mailto:ajabd098@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Email</b><em>ajabd098@gmail.com</em></span></a>
+        <a class="soc fb" href="https://www.facebook.com/share/1ETmwC9Qpo/" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg><span><b>Facebook</b><em>Abdullah Mukter</em></span></a>
+        <a class="soc li" href="https://www.linkedin.com/in/md-abdullah-b13332412" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9h4v11H4zM6 3.5a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6zM10 9h3.8v1.6c.6-1.1 2-1.9 3.8-1.9 3.7 0 4.4 2.4 4.4 5.6V20h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20h-4z"/></svg><span><b>LinkedIn</b><em>LinkedIn profile</em></span></a>
+        <a class="soc ig" href="https://www.instagram.com/abdullah_mukter" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg><span><b>Instagram</b><em>@abdullah_mukter</em></span></a>
+        <a class="soc gh" href="https://github.com/abdullah-jewel" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg><span><b>GitHub</b><em>abdullah-jewel</em></span></a>
     </div>
-    <div class="contact-wave" aria-hidden="true"><svg viewBox="0 0 200 80" preserveAspectRatio="none"><path class="cw" d="M0 40 Q25 -10 50 40 T100 40 T150 40 T200 40" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
+    <svg class="cc-flow" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 H400" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 9"/></svg>
   </div>
 </section>
 </main>
 
 <footer class="foot mono">
   <span>© <span id="yr">2026</span> Abdullah Mukter Jewel</span>
-  <span>Built with HTML, CSS &amp; a little mathematics</span>
+  <span class="foot-soc"><a href="https://www.facebook.com/share/1ETmwC9Qpo/" target="_blank" rel="noopener me" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a><a href="https://www.linkedin.com/in/md-abdullah-b13332412" target="_blank" rel="noopener me" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9h4v11H4zM6 3.5a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6zM10 9h3.8v1.6c.6-1.1 2-1.9 3.8-1.9 3.7 0 4.4 2.4 4.4 5.6V20h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20h-4z"/></svg></a><a href="https://www.instagram.com/abdullah_mukter" target="_blank" rel="noopener me" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg></a><a href="https://github.com/abdullah-jewel" target="_blank" rel="noopener me" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a></span>
   <a href="#top">Back to top ↑</a>
 </footer>
 
@@ -417,7 +434,7 @@
       <div class="lang en">
         <article class="ch"><span class="ch-n">01</span><h3>Roots</h3>
           <p>My name is Abdullah Mukter (Jewel), and I am currently studying in the Department of Electrical and Electronic Engineering (EEE) at CUET.</p>
-          <p>My father runs a tea shop in our village, South East Mekhal in Hathazari, Chattogram, and as a boy I was a helping hand there. He is an educated man who studied through great hardship, and in those days he supported his family by giving private tuition himself. He was an expert in mathematics. My mother is a homemaker and a woman of firm principles.</p></article>
+          <p>I was born and raised in South East Mekhal, a village in Hathazari, Chattogram. My father is an educated man who studied through great hardship. He is very good in mathematics, and in those days he supported his family by tutoring; later he opened a tea shop in our village, where, as a boy, I was a helping hand. My mother is a homemaker and a woman of firm principles.</p></article>
         <article class="ch"><span class="ch-n">02</span><h3>The madrasa</h3>
           <p>My learning began at a madrasa, the Ishaatus Sunnah Tahfizul Quran Noorani Madrasa. I studied there from the nursery class to class three, and I finished my madrasa life by securing second place in class three.</p></article>
         <article class="ch"><span class="ch-n">03</span><h3>Primary school</h3>
@@ -436,7 +453,7 @@
           <p>I completed my college life in HSC 2022 with 1206 out of 1300, the highest marks in the college, and a Golden A+. Then the hard phase of admission tests began, and I successfully cracked CUET, Dhaka University and SUST.</p>
           <p>From our college, I alone was selected to sit the BUET exam (I had 96% marks in Physics, Chemistry and Math, and BUET wanted 92%). I passed the BUET preliminary and was selected for the written round, but when I did not find my name in the written result, I was somewhat broken. Even so, Allah has given me many things that were beyond my expectations, Alhamdulillah.</p></article>
         <article class="ch last"><span class="ch-n">08</span><h3>CUET</h3>
-          <p>And so my journey began with admission to EEE at CUET in October 2023. Since then I have been supporting my family through tuition, and Alhamdulillah, Allah has kept me well and has carried me along until now.</p>
+          <p>And so my journey began with admission to EEE at CUET in October 2023. Since then I have been supporting my family by tutoring almost ten students at the SSC (Science) and HSC (Science) levels, and Alhamdulillah, Allah has kept me well and has carried me along until now.</p>
           <p class="sign mono">— Abdullah Mukter Jewel</p></article>
       </div>
 
