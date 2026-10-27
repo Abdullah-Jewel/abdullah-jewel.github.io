@@ -169,3 +169,10 @@ boot();
   if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis)go()},{threshold:0}).observe(svg);
 })();
 })();
+
+/* ---------- Idea Lab tabs ---------- */
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('#lab [role=tab]'));if(!tabs.length)return;
+function sel(t,f){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;var p=document.getElementById(x.getAttribute('aria-controls'));if(p)p.hidden=!on});if(f)t.focus();t.scrollIntoView&&t.scrollIntoView({block:'nearest',inline:'center'})}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(t)});t.addEventListener('keydown',function(e){var k=e.key,n=null;if(k==='ArrowRight')n=tabs[(i+1)%tabs.length];if(k==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];if(n){e.preventDefault();sel(n,true)}})});
+})();
